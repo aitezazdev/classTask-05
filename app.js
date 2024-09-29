@@ -15,6 +15,7 @@ btn.addEventListener("click", function () {
   var months = currentDate.getMonth() - birthDate.getMonth();
   var days = currentDate.getDate() - birthDate.getDate();
 
+  
   // for negative months or days
   if (days < 0) {
     months--;
@@ -25,6 +26,8 @@ btn.addEventListener("click", function () {
     months += 12;
   }
 
+
+  // handle plurals
   if (years == 1) {
     year.textContent = "Year";
   }
@@ -35,7 +38,23 @@ btn.addEventListener("click", function () {
     day.textContent = "Day";
   }
 
-  outputYear.textContent = years;
-  outputMonth.textContent = months;
-  outputDay.textContent = days;
+
+  // handle single digit
+  if (years < 10) {
+    outputYear.textContent = "0" + years;
+  } else {
+      outputYear.textContent = years;
+  }
+
+  if (months < 10) {
+    outputMonth.textContent = "0" + months;
+  } else {
+    outputMonth.textContent = months;
+  }
+  
+  if (days < 10) {
+    outputDay.textContent = "0" + days;
+  } else {
+    outputDay.textContent = days;
+  }
 });
