@@ -55,6 +55,10 @@ main {
     cursor: pointer;
 }
 
+#input-date button:hover{
+    background-color: #e2e4e5;
+}
+
 #output {
     width: 100%;
     display: flex;
@@ -82,4 +86,34 @@ main {
 #year-text, #month-text, #day-text {
     font-size: 30px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 550px) {
+    main {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main{
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        padding: 10px;
+    }
+    #input-date {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    #input-date button {
+        font-size: 15px;
+        width: 40%;
+    }
+    .box {
+        padding: 15px;
+    }
 }
