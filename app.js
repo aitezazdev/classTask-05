@@ -12,7 +12,7 @@ btn.addEventListener("click", function () {
   var months = currentDate.getMonth() - birthDate.getMonth();
   var days = currentDate.getDate() - birthDate.getDate();
 
-  // for negative months or daysc
+  // for negative months or days
   if (days < 0) {
     months--;
     days += 30;
