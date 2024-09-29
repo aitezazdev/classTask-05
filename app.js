@@ -11,8 +11,12 @@ btn.addEventListener("click", function () {
   var birthDate = new Date(input.value);
   var currentDate = new Date();
 
-  if (input.value == "" || birthDate > currentDate) {
+  if (input.value == "") {
     alert("Please enter a valid date");
+    return;
+  }
+  if (birthDate > currentDate) {
+    alert("Date cannot be in the future");
     return;
   }
 
