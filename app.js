@@ -4,13 +4,25 @@ var outputYear = document.getElementById("year-text");
 var outputMonth = document.getElementById("month-text");
 var outputDay = document.getElementById("day-text");
 
-btn.addEventListener("click", function() {
-    var date = new Date(input.value);
-    var currentDate = new Date();
-    var year = currentDate.getFullYear() - date.getFullYear();
-    var month = currentDate.getMonth() - date.getMonth();
-    var day = currentDate.getDate() - date.getDate() + 1;
-    outputYear.innerHTML = year;
-    outputMonth.innerHTML = month;
-    outputDay.innerHTML = day;
-})
+btn.addEventListener("click", function () {
+  var birthDate = new Date(input.value);
+  var currentDate = new Date();
+  
+  var years = currentDate.getFullYear() - birthDate.getFullYear();
+  var months = currentDate.getMonth() - birthDate.getMonth();
+  var days = currentDate.getDate() - birthDate.getDate();
+
+  // for negative months or daysc
+  if (days < 0) {
+    months--;
+    days += 30;
+  }
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  outputYear.textContent = years;
+  outputMonth.textContent = months;
+  outputDay.textContent = days;
+});
